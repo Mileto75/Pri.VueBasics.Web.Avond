@@ -1,0 +1,36 @@
+﻿<div id="app" class="row">
+
+    <h5>{{pageTitle}}</h5>
+    <a v-bind:href="url" class="btn btn-outline-info">Nws</a>
+    <div v-if="isVisible">
+        I am visible
+    </div>
+    <div v-else>
+        I am not visible
+    </div>
+    <select class="form-select">
+        <option v-for="color in colors">{{color}}</option>
+    </select>
+    <div class="row">
+        <div v-for="color in colors"  class="col col-lg-3 m-2">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{color}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="btn btn-primary">Card button</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button v-on:click="getQuote" class="btn btn-outline-info">New Quote</button>
+    <div class="alert alert-info">{{quote}}</div>
+</div>
+@* end of vue app *@
+
+
+@* scripts *@
+<script src="~/lib/axios/axios.js"></script>
+<script src="~/lib/vue/vue.js"></script>
+<script src="~/js/app.js" asp-append-version="true"></script>
